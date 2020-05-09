@@ -1,0 +1,46 @@
+{
+  "name": "p74y",
+  "version": "0.0.0",
+  "description": "P74Y!",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Snowflake107/P74Y.git"
+  },
+  "keywords": [
+    "p74ybot",
+    "discord",
+    "discord.js",
+    "musicbot"
+  ],
+  "author": "Snowflake107",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Snowflake107/P74Y/issues"
+  },
+  "homepage": "https://github.com/Snowflake107/P74Y#readme",
+  "devDependencies": {
+    "@types/node": "^13.7.0"
+  },
+  "dependencies": {
+    "@discordjs/opus": "^0.3.2",
+    "chalk": "^4.0.0",
+    "discord-ytdl-core": "^2.0.1",
+    "discord.js": "github:Snowflake107/discord.js",
+    "express": "^4.17.1",
+    "hastebin-gen": "^2.0.5",
+    "moment": "^2.25.3",
+    "moment-duration-format": "^2.3.2",
+    "node-fetch": "^2.6.0",
+    "simple-youtube-api": "^5.2.1",
+    "snekfetch": "^4.0.4",
+    "quick.db": "^7.1.1"
+  },
+  "engines": {
+    "node": "12.x"
+  }
+}
