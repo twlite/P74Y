@@ -1,5 +1,6 @@
 module.exports = {
-  token: process.env.BOT_TOKEN,
+  token: "BOT_TOKEN",
+  youtube: "YOUTUBE_API_KEY",
   admin: ["OWNER_ID"],
   debug: false,
   logger: {
