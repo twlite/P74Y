@@ -1,6 +1,5 @@
 const Command = require("../../Base/Command");
 const YouTube = require("simple-youtube-api");
-const youtube = new YouTube(process.env.YOUTUBE);
 
 class Play extends Command {
   constructor(client) {
@@ -13,6 +12,8 @@ class Play extends Command {
   }
 
   async execute(message, args, Discord) {
+    const youtube = new YouTube(this.client.config.youtube);
+
     const query = args.join(" ");
     const url = args[0] ? args[0].replace(/<(.+)>/g, "$1") : "";
     if (!message.member.voice.channel)
