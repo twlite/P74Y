@@ -40,7 +40,8 @@ class Music {
         video.duration.seconds * 1000,
       requestedBy: message.author,
       requestedAt: new Date(),
-      requestedTimestamp: Date.now()
+      requestedTimestamp: Date.now(),
+      streamTime: 0
     };
     if (!serverQueue) {
       const queueConstruct = {
@@ -118,7 +119,7 @@ class Music {
       serverQueue.voiceChannel.leave();
       return serverQueue.textChannel.send("Music player has ended!");
     }
-  //  serverQueue.frame = this.streamTime(serverQueue,skip);
+    serverQueue.songs[0].streamTime = serverQueue.songs[0].streamTime + skip; // update frame position
     const stream = ytdl(song.url, {
       filter: "audioonly",
       quality: "highestaudio",
@@ -142,8 +143,10 @@ class Music {
         volume: serverQueue.volume / 100
       })
       .on("end", reason => {
-        if (serverQueue.loop === true)
-          serverQueue.songs.push(serverQueue.songs.shift());
+        if (serverQueue.loop === true) {
+           serverQueue.songs[0].streamTime = 0; // reset to initial frame
+           serverQueue.songs.push(serverQueue.songs.shift());
+        }
         else serverQueue.songs.shift();
         this.play(guild, serverQueue.songs[0]);
       })
