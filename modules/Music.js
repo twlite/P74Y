@@ -133,7 +133,7 @@ class Music {
             "-af",
             serverQueue.vaporwave
               ? `asetrate=44100*0.8,aresample=44100,atempo=1.1`
-              : `equalizer=f=40:width_type=h:width=50:g=${serverQueue.bassboost}`
+              : `equalizer=f=40:width_type=h:width=50:g=${serverQueue.bassboost},dynaudnorm=f=150`
           ]
     });
     const dispatcher = serverQueue.connection
