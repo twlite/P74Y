@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const ytdl = require("discord-ytdl-core");
 let NIGHTCORE = [
   "-af",
-  "asetrate=44100*1.6,aresample=44100,equalizer=f=40:width_type=h:width=50:g=10"
+  "asetrate=44100*1.25"
 ];
 let ECHO = ["-af", "aecho=0.6:0.3:1000:0.5"];
 
